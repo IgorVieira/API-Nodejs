@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "./node_modules/.bin/babel-node server/server.js"
+    "start": "./node_modules/.bin/babel-node server/server.js",
+    "test": "mocha --opts test/integration/mocha.opts test/integration/**/*.js"
   },
   "engines": {
     "node": "4.5.0"
@@ -24,5 +25,11 @@
     "mongo-sanitize": "*",
     "mongoose": "4.6.4"
   },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "supertest": "^2.0.0"
+  },
+
   "keywords": []
 }

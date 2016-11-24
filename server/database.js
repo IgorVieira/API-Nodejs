@@ -1,9 +1,12 @@
 import mongoose from 'mongoose'
+import Promise from 'bluebird'
+
+
 
 module.exports = uri =>{
 
  
-  mongoose.Promise = require('bluebird') 
+   mongoose.Promise = Promise
  
   mongoose.connect(uri);
 
