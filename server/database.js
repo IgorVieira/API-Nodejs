@@ -13,7 +13,7 @@ module.exports = uri =>{
             console.log(`mongoose connection ${err}`)
           })
 
-        console.log('connect - attemping reconnect')
+        console.log(`Mongodb connected: ${uri}`)
         
 
       })
