@@ -12,9 +12,9 @@ describe('Route books', ()=>{
     it('should return a list of books', done => {
       request
         .get('/api/books')
-        .end((err, res) => {
-            expect(req.body.to.be).instanceof(Array)
-            done(err) 
+        .end((err, res) =>{
+          expect(res.body).to.be.instanceof(Array);
+          done(err)
         })
 
 
