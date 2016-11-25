@@ -9,7 +9,7 @@ let Book = app.models.book
 
 
   controller.listBooks = (req, res) =>{
-    Book.find()
+    Book.find().exec()
     .then(book => res.json(book))
     .catch(err => console.log(err))
   }
