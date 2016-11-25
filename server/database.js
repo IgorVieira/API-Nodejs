@@ -1,36 +1,35 @@
 import mongoose from 'mongoose'
-import Promise from 'bluebird'
+mongoose.Promise = require('bluebird')
 
 
 
 module.exports = uri =>{
 
+
+
+   mongoose.connect(uri)
+      .then(() =>{
+         mongoose.connection.on('error', err =>{
+            console.log(`mongoose connection ${err}`)
+          })
+
+        console.log(`Mongodb connected: ${uri}`)
+        
+
+      })
+      .catch(err => {
+          console.log(`rejected promise ${err}`)
+          mongoose.disconnect()      
+        
+      })
+
+      process.on('SIGINT', function() {
+        mongoose.connection.close(function() {
+          console.log('Good bye =]');
+          process.exit(0);
+        });
+      });
+    
+  
  
-   mongoose.Promise = Promise
- 
-  mongoose.connect(uri);
-
-  mongoose.connection.on('connected', function(){
-    console.log('Mongoose! Conectado em:'+ uri);
-  });
-
-
-  mongoose.connection.on('disconnect', function(){
-    console.log('Mongoose! Desconectado em:'+ uri);
-  });
-
-  mongoose.connection.on('error', function(erro){
-    console.log('Mongoose!Erro na conexão'+ erro);
-  });
-
-  process.on('SIGINT', function(){
-    mongoose.connection.close(function(){
-      console.log('Mongoose! Desconectado pelo término da aplicação');
-      process.exit(0);
-    }); 
-  });
-
-
-
-
 }
