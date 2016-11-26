@@ -26,7 +26,7 @@ let Book = app.models.book
 
   controller.saveBooks = (req, res) =>{
 
-      let _id = req.body.id
+      let _id = req.body._id
 
 
       let data = {
@@ -50,7 +50,7 @@ let Book = app.models.book
         .then((book=>res.json(book)))
         .catch((err => {
               res.status(500).json(err)
-              console.log(er)
+              console.log(eer)
           }))
  
       }
