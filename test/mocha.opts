@@ -1,6 +1,5 @@
---require test/integration/helpers.js
+--require test/helpers.js
 --report spec
 --compilers js:babel-core/register
 --slow 5000
 --timeout 10000
-

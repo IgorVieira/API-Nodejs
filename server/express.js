@@ -33,6 +33,7 @@ consign({cwd:'server', verbose:false})
     .include('models')
     .then('controllers')
     .then('routes')
+    .then('test')
     .into(app)
 
 
