@@ -1,10 +1,10 @@
 # node_api
 
-# Requirements
+## Requirements
 
 - Nodejs
 
-# Getting Started
+## Getting Started
 
 ```
 git clone https://github.com/IgorVieira/node_api.git
