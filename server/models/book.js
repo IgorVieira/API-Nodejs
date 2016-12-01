@@ -1,7 +1,5 @@
 import mongoose from 'mongoose'
-import Promise from 'bluebird'
 
-Promise.promisifyAll(mongoose)
 
 module.exports = app =>{
 

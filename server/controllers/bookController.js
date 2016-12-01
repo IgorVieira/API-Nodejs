@@ -14,15 +14,7 @@ let Book = app.models.book
     .catch(err => console.log(err))
   }
 
-  controller.getBookForId = (req,res) =>{
-    let _id = req.params.id
-    Book.findById(_id).exec()
-      .then(book =>{
-        if(!book) throw new Error("Book is not found")
-        res.json(book)
-      })
-
-  }
+  
 
   controller.saveBooks = (req, res) =>{
 
@@ -58,6 +50,16 @@ let Book = app.models.book
 
 
 
+
+  }
+  
+  controller.getBookForId = (req,res) =>{
+    let _id = req.params.id
+    Book.findById(_id).exec()
+      .then(book =>{
+        if(!book) throw new Error("Book is not found")
+        res.json(book)
+      })
 
   }
 
