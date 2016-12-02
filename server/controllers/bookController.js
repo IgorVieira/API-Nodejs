@@ -32,7 +32,7 @@ let Book = app.models.book
         .then((book=>res.json(book)))
             .catch((err => {
                 res.status(500).json(err)
-                console.log(er)
+                console.log(err)
             }))
 
 
@@ -42,7 +42,7 @@ let Book = app.models.book
         .then((book=>res.json(book)))
         .catch((err => {
               res.status(500).json(err)
-              console.log(eer)
+              console.log(err)
           }))
  
       }
@@ -60,6 +60,7 @@ let Book = app.models.book
         if(!book) throw new Error("Book is not found")
         res.json(book)
       })
+    .catch(err => console.error(err))
 
   }
 
